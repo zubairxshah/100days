@@ -6,7 +6,7 @@
 import inquirer from "inquirer";
 let pinNumber = 1234;
 let balance = 10000;
-let pinAttempts = 2;
+let pinAttempts = 3;
 // PIN verification loop
 for (pinAttempts; pinAttempts >= 0; pinAttempts--) {
     let pinVerify = await inquirer.prompt([{
@@ -18,16 +18,12 @@ for (pinAttempts; pinAttempts >= 0; pinAttempts--) {
         console.log('\n\tPin verified successfully!\t\n');
         break; // Exit the loop if PIN is verified
     }
-    else if (pinAttempts === 0) {
-        console.log('\tALERT: Your account is locked, contact your bank or call 1800-bank.');
-        process.exit(); // End the program if PIN attempts are exhausted
-    }
     else {
         console.log('Invalid pin entered, try again!');
-        // if (pinAttempts === 0) {
-        //     console.log('\tALERT: Your account is locked, contact your bank or call 1800-bank.');
-        //     process.exit(); // End the program if PIN attempts are exhausted
-        // }
+        if (pinAttempts === 0) {
+            console.log('\tALERT: Your account is locked, contact your bank or call 1800-bank.');
+            process.exit(); // End the program if PIN attempts are exhausted
+        }
     }
 }
 // Transaction loop
@@ -76,3 +72,70 @@ while (true) {
         }
     }
 }
+// let accountBalance: number  = 100000;
+// let accountPin: number = 1234;
+// let pinApproval = await inquirer.prompt(
+//     [
+//         {
+//             name: "pin",
+//             message: "Enter your pin number ",
+//             type: "number"
+//         }
+//     ]
+// );
+// if (pinApproval.pin === accountPin)
+// {
+//      console.log("pin number matched");
+//     let operationMenu = await inquirer.prompt(
+//     [
+//         {
+//             name : "operation",
+//             message : "Please select one option from the list ",
+//             type: "list",
+//             choices: ["withdraw cash", "check your balance", "fast cash"],
+//         }
+//     ]
+// );
+// if(operationMenu.operation === "withdraw cash"){ // choice mismatch
+//     let amountAns = await inquirer.prompt(
+//         [
+//             {
+//                 name: "amount",
+//                 message: "Enter your required amount",
+//                 type : "number",
+//             }
+//         ]
+//     );
+// if (amountAns.amount > accountBalance)
+// {
+//     console.log ("insufficient Balance");
+// }
+// else if (accountBalance -=  amountAns.amount)
+// {
+//     console.log(`your remaining balance   ${accountBalance}`); //you did not add back tick
+// }
+// };
+//  if (operationMenu.operation === "check your balance") // choice mismatch
+// {
+//     console.log (`your balance is : ${accountBalance}`); //again no back ticks
+// }
+//  if (operationMenu.operation === "fast cash"){
+//     let fast = await inquirer.prompt(
+//      [{
+//         name :"fast_opt",
+//         message: "how much money you want to withdraw",
+//         type: "list",
+//         choices: ["1000", "2000", "5000", "10000"],
+//      }]
+//     );
+//     if(fast.fast_opt <= accountBalance){
+//         accountBalance -= fast.fast_opt;
+//         console.log("The remaining balance is:", +accountBalance);
+//     }
+//     else{
+//         console.log("you have insufficient balance");
+//     }
+//     }}
+// else { // written under wrong branch
+//     console.log ('invalid pin.')
+// }
