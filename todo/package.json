@@ -1,0 +1,28 @@
+{
+  "name": "zs01-tasklist-v1",
+  "version": "1.0.0",
+  "description": "This proram creates a todo list.",
+  "type": "module",
+  "bin": "todo.js",
+  "main": "todo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zubairxshah/100Days.git"
+  },
+  "keywords": [
+    "todo",
+    "list",
+    "task",
+    "manager",
+    "reminder"
+  ],
+  "author": "Zubair Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zubairxshah/100Days/issues"
+  },
+  "homepage": "https://github.com/zubairxshah/100Days#readme"
+}

@@ -1,6 +1,6 @@
 {
   "name": "zs01-atm-machine",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A simple ATM mahcine simulation in TypeScript and JS",
   "main": "main.js",
   "type": "module",
@@ -23,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/zubairxshah/100days/issues"
   },
-  "homepage": "https://github.com/zubairxshah/100days#readme"
+  "homepage": "https://github.com/zubairxshah/100days#readme",
+  "dependencies": {
+    "inquirer": "^9.2.17"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.2"
+  }
 }

@@ -1,8 +1,10 @@
-// ATM machine should perform followin functions
-// 1. Greets and asks for a pin and verify it
-// 2. Adds options to select Withdraw funds, Check Balance, and exit
-// 3. Showing the remaining balance amount after deduction of funds
-// 4. If balance is low or 0, display a message about low funds or no funds
+#!/usr/bin/env node
+
+/* ATM machine should perform followin functions
+1. Greets and asks for a pin and verify it
+2. Adds options to select Withdraw funds, Check Balance, and exit
+3. Showing the remaining balance amount after deduction of funds
+4. If balance is low or 0, display a message about low funds or no funds */
 
 import inquirer from "inquirer";
 
@@ -16,6 +18,7 @@ for (pinAttempts; pinAttempts >= 0; pinAttempts--) {
         name: 'pin',
         type: 'number',
         message: '\tEnter a valid pin number to proceed:\t',
+        default: '\nPin is 1234'
     }]);
 
     if (pinVerify.pin === pinNumber) {
