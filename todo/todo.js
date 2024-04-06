@@ -6,7 +6,7 @@
  */
 import inquirer from "inquirer";
 import chalk from "chalk";
-let todoList = ['Work hard', 'Stay in office'];
+let todoList = ['Send emails', 'Late sitting'];
 console.log(chalk.red.underline.bgGray('\tWelcome to Office Todo List Manager!\n'));
 // Making a function to ask users to select a todo list operation.
 async function taskList(todoList) {
@@ -28,7 +28,7 @@ async function taskList(todoList) {
                 }
             ]);
             todoList.push(addTask.add);
-            console.log(todoList);
+            console.log(chalk.yellow(todoList));
         }
         if (menuList.choose === 'Update a Task') {
             let tasksAdded = await inquirer.prompt([
@@ -39,6 +39,7 @@ async function taskList(todoList) {
                     choices: todoList.map(item => item),
                 }
             ]);
+            let selectedTaskIndex = todoList.indexOf(tasksAdded.select);
             let updateTasks = await inquirer.prompt([
                 {
                     name: 'update',
@@ -46,9 +47,16 @@ async function taskList(todoList) {
                     message: chalk.bgGreen('\tReplace selected task with a new one.\n'),
                 }
             ]);
-            let newTasks = todoList.filter(val => val !== tasksAdded.select);
-            todoList = [...newTasks, updateTasks.update];
-            console.log(todoList);
+            if (selectedTaskIndex !== -1) {
+                todoList[selectedTaskIndex] = updateTasks.update;
+                console.log(chalk.yellow(todoList));
+            }
+            else {
+                (console.log(chalk.red('Task not found, select a vaild task.')));
+            }
+            // let newTasks = todoList.filter(val => val !== tasksAdded.select);
+            // todoList = [...newTasks, updateTasks.update];
+            // console.log(chalk.yellow(todoList.indexOf(updateTasks.update)));
         }
         if (menuList.choose === 'Remove a Task') {
             const taskDelete = await inquirer.prompt([
@@ -61,15 +69,31 @@ async function taskList(todoList) {
             ]);
             let newTasks = todoList.filter(val => val !== taskDelete.omit);
             todoList = [...newTasks];
-            console.log(todoList);
+            console.log(chalk.yellow(todoList));
         }
         if (menuList.choose === 'View List') {
-            console.log(todoList);
+            console.log(chalk.yellow(todoList));
+        }
+        ;
+        if (todoList) {
+            let newTasks = todoList.filter(arr => arr !== "");
+            todoList = todoList.filter(entry => entry.trim() !== '');
         }
         ;
         if (menuList.choose === 'Exit') {
-            console.log(chalk.bgBlackBright('\tThank you for adding your tasks.'));
-            break;
+            let exit = await inquirer.prompt([
+                {
+                    name: 'end',
+                    type: 'confirm',
+                    message: 'Would you like to exit',
+                    default: ''
+                }
+            ]);
+            if (exit.end === true) {
+                console.log(chalk.bgBlackBright('\tThank you for adding your tasks.'));
+                break;
+            }
+            ;
         }
     } while (true);
 }
