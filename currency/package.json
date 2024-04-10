@@ -1,0 +1,30 @@
+{
+  "name": "zs01-convert-money-cli",
+  "version": "1.0.0",
+  "description": "This program converts different currencies.",
+  "main": "main.js",
+  "type": "module",
+  "bin": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zubairxshah/100days.git"
+  },
+  "keywords": [
+    "currency",
+    "coversion",
+    "exchange",
+    "money"
+  ],
+  "author": "zubair shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zubairxshah/100days/issues"
+  },
+  "homepage": "https://github.com/zubairxshah/100days#readme",
+  "dependencies": {
+    "inquirer": "^9.2.17"
+  }
+}
