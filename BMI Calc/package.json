@@ -1,0 +1,12 @@
+{
+  "name": "bmi_calc",
+  "version": "1.0.0",
+  "description": "This program calculates BMI of a person",
+  "type": "module",
+  "main": "bmi_calc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

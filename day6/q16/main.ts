@@ -6,7 +6,7 @@ let guests : string[] = ['Jacob', 'Wendy', 'Scott'];
 
 let newGuest = guests.push("Bernard");
 newGuest = guests.unshift("Rick");
-guests.splice(guests.length / 2, 0, "James");
+guests.splice(guests.length / 2, 0, "James"); // removes a name from middle of the arrage and add new name
 
 guests.forEach(guest => {
   console.log(`Respected ${guest}, your are invited to attend the wedding party today.`);
