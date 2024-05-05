@@ -1,6 +1,6 @@
 {
   "name": "zs01-wordcount-advanced",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A program that will take user input and counts words in a sentence.",
   "type" :"module",
   "main": "main.js",

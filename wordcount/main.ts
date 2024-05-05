@@ -1,4 +1,5 @@
-#!usr/bin/env node
+#!/usr/bin/env node
+
 /* The project will count words in sentence provided through user input.
 The white spaces will be removed from the sentence to count exact words in that.
 A loop is introduced to repeat the input entry and count another sentence.
@@ -6,6 +7,11 @@ Choices will be asked to end the program, otherwise it will keep asking the user
 
 import inquirer from "inquirer";
 import chalk from "chalk";
+
+console.log(chalk.green('\t========================================='))
+console.log(chalk.green('\tWelcome to Advanced Word Counter Program'))
+console.log(chalk.green('\t========================================='))
+
 
 let main = async () => {
 let sentence = ''; // to store the the value of addInput to be used in other if statements
@@ -51,8 +57,8 @@ let sentence = ''; // to store the the value of addInput to be used in other if 
     }
     // This code tells the user total characters in a sentence
     if (menu.options === "Total Characters"){
-        const whiteSpaces = sentence.length;
-        console.log (chalk.green(`Your sentence contains ${chalk.underline.bold(whiteSpaces)} white spaces.`));
+        const totalChars = sentence.length;
+        console.log (chalk.green(`Your sentence contains ${chalk.underline.bold(totalChars)} white spaces.`));
     }
     // asks whether user wants to exit or continue and end program if selected no.
     if (menu.options === "Exit"){
