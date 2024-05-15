@@ -1,5 +1,4 @@
 /* Question 42: Great Magicians: Add "the Great" to magician names. */
-/* Question 41: Magicians: Display magician names from an array. */
 //Simple method to display array elements
 function listMagicians() {
     const magician = ['Nadjib Haffaf', 'Appolo Robbins', 'Bartolomeo Bosco'];
